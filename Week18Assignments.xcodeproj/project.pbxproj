@@ -48,8 +48,7 @@
 		A2AF0007291221FA00CD03F8 /* Week18Assignments */ = {
 			isa = PBXGroup;
 			children = (
-				A2AF0008291221FA00CD03F8 /* AppDelegate.swift */,
-				A2AF000A291221FA00CD03F8 /* SceneDelegate.swift */,
+				A2AF001C2912229000CD03F8 /* App */,
 				A2AF000C291221FA00CD03F8 /* ViewController.swift */,
 				A2AF000E291221FA00CD03F8 /* Main.storyboard */,
 				A2AF0011291221FC00CD03F8 /* Assets.xcassets */,
@@ -57,6 +56,15 @@
 				A2AF0016291221FC00CD03F8 /* Info.plist */,
 			);
 			path = Week18Assignments;
+			sourceTree = "<group>";
+		};
+		A2AF001C2912229000CD03F8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF0008291221FA00CD03F8 /* AppDelegate.swift */,
+				A2AF000A291221FA00CD03F8 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		A2AFFFFC291221FA00CD03F8 = {
