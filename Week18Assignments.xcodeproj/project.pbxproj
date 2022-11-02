@@ -24,6 +24,8 @@
 		A2AF00382912C05500CD03F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00372912C05500CD03F8 /* BaseViewController.swift */; };
 		A2AF003C2913223900CD03F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF003B2913223900CD03F8 /* NetworkManager.swift */; };
 		A2AF003F2913259C00CD03F8 /* OfflineWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF003E2913259C00CD03F8 /* OfflineWarningViewController.swift */; };
+		A2AF00422913274D00CD03F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00412913274D00CD03F8 /* SnapKit */; };
+		A2AF00452913276100CD03F8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00442913276100CD03F8 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2AF002F2912BF7400CD03F8 /* Kingfisher in Frameworks */,
+				A2AF00452913276100CD03F8 /* Then in Frameworks */,
+				A2AF00422913274D00CD03F8 /* SnapKit in Frameworks */,
 				A2AF002C2912BEB800CD03F8 /* RxMoya in Frameworks */,
 				A2AF00272912BDA600CD03F8 /* RxSwift in Frameworks */,
 				A2AF00252912BDA600CD03F8 /* RxCocoa in Frameworks */,
@@ -165,6 +169,8 @@
 				A2AF002B2912BEB800CD03F8 /* RxMoya */,
 				A2AF002E2912BF7400CD03F8 /* Kingfisher */,
 				A2AF00312912BFE600CD03F8 /* Hero */,
+				A2AF00412913274D00CD03F8 /* SnapKit */,
+				A2AF00442913276100CD03F8 /* Then */,
 			);
 			productName = Week18Assignments;
 			productReference = A2AF0005291221FA00CD03F8 /* Week18Assignments.app */;
@@ -200,6 +206,8 @@
 				A2AF00282912BEB800CD03F8 /* XCRemoteSwiftPackageReference "Moya" */,
 				A2AF002D2912BF7400CD03F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A2AF00302912BFE600CD03F8 /* XCRemoteSwiftPackageReference "Hero" */,
+				A2AF00402913274D00CD03F8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A2AF00432913276100CD03F8 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = A2AF0006291221FA00CD03F8 /* Products */;
 			projectDirPath = "";
@@ -498,6 +506,22 @@
 				version = 1.6.2;
 			};
 		};
+		A2AF00402913274D00CD03F8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A2AF00432913276100CD03F8 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -535,6 +559,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2AF00302912BFE600CD03F8 /* XCRemoteSwiftPackageReference "Hero" */;
 			productName = Hero;
+		};
+		A2AF00412913274D00CD03F8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00402913274D00CD03F8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		A2AF00442913276100CD03F8 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00432913276100CD03F8 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

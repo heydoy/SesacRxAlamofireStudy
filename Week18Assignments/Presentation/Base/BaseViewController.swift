@@ -6,9 +6,7 @@
 //
 
 import UIKit
-
-
-import UIKit
+import Hero
 
 class BaseViewController: UIViewController {
     let networkManager = NetworkManager.shared
@@ -19,6 +17,11 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .systemBackground
         configure()
         setNavigationBar()
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         checkNetworkAvailability()
 
     }
@@ -27,8 +30,14 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .black
     }
     func checkNetworkAvailability() {
-        networkManager.isUnreachable { _ in
-            print("인터넷 연결이 안됩니다 ")
+        networkManager.isUnreachable { [weak self] _ in
+            print("인터넷 연결이 안됩니다.")
+            let vc = OfflineWarningViewController()
+            vc.hero.isEnabled = true
+            vc.hero.modalAnimationType = .slide(direction: .up)
+            vc.modalPresentationStyle = .fullScreen
+            
+            self?.present(vc, animated: true, completion: nil)
         }
     }
 }
