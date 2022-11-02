@@ -13,6 +13,15 @@
 		A2AF0010291221FA00CD03F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2AF000E291221FA00CD03F8 /* Main.storyboard */; };
 		A2AF0012291221FC00CD03F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2AF0011291221FC00CD03F8 /* Assets.xcassets */; };
 		A2AF0015291221FC00CD03F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2AF0013291221FC00CD03F8 /* LaunchScreen.storyboard */; };
+		A2AF00222912BCF200CD03F8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00212912BCF200CD03F8 /* Reachability */; };
+		A2AF00252912BDA600CD03F8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00242912BDA600CD03F8 /* RxCocoa */; };
+		A2AF00272912BDA600CD03F8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00262912BDA600CD03F8 /* RxSwift */; };
+		A2AF002A2912BEB800CD03F8 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00292912BEB800CD03F8 /* Moya */; };
+		A2AF002C2912BEB800CD03F8 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF002B2912BEB800CD03F8 /* RxMoya */; };
+		A2AF002F2912BF7400CD03F8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF002E2912BF7400CD03F8 /* Kingfisher */; };
+		A2AF00322912BFE600CD03F8 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00312912BFE600CD03F8 /* Hero */; };
+		A2AF00362912C04700CD03F8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00352912C04700CD03F8 /* BaseView.swift */; };
+		A2AF00382912C05500CD03F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00372912C05500CD03F8 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +40,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2AF002F2912BF7400CD03F8 /* Kingfisher in Frameworks */,
+				A2AF002C2912BEB800CD03F8 /* RxMoya in Frameworks */,
+				A2AF00272912BDA600CD03F8 /* RxSwift in Frameworks */,
+				A2AF00252912BDA600CD03F8 /* RxCocoa in Frameworks */,
+				A2AF002A2912BEB800CD03F8 /* Moya in Frameworks */,
+				A2AF00322912BFE600CD03F8 /* Hero in Frameworks */,
+				A2AF00222912BCF200CD03F8 /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +107,15 @@
 			dependencies = (
 			);
 			name = Week18Assignments;
+			packageProductDependencies = (
+				A2AF00212912BCF200CD03F8 /* Reachability */,
+				A2AF00242912BDA600CD03F8 /* RxCocoa */,
+				A2AF00262912BDA600CD03F8 /* RxSwift */,
+				A2AF00292912BEB800CD03F8 /* Moya */,
+				A2AF002B2912BEB800CD03F8 /* RxMoya */,
+				A2AF002E2912BF7400CD03F8 /* Kingfisher */,
+				A2AF00312912BFE600CD03F8 /* Hero */,
+			);
 			productName = Week18Assignments;
 			productReference = A2AF0005291221FA00CD03F8 /* Week18Assignments.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +144,13 @@
 				Base,
 			);
 			mainGroup = A2AFFFFC291221FA00CD03F8;
+			packageReferences = (
+				A2AF00202912BCF200CD03F8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				A2AF00232912BDA600CD03F8 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A2AF00282912BEB800CD03F8 /* XCRemoteSwiftPackageReference "Moya" */,
+				A2AF002D2912BF7400CD03F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A2AF00302912BFE600CD03F8 /* XCRemoteSwiftPackageReference "Hero" */,
+			);
 			productRefGroup = A2AF0006291221FA00CD03F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +402,87 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2AF00202912BCF200CD03F8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = exactVersion;
+				version = 5.1.0;
+			};
+		};
+		A2AF00232912BDA600CD03F8 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		A2AF00282912BEB800CD03F8 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = exactVersion;
+				version = 15.0.0;
+			};
+		};
+		A2AF002D2912BF7400CD03F8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		A2AF00302912BFE600CD03F8 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			requirement = {
+				kind = exactVersion;
+				version = 1.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2AF00212912BCF200CD03F8 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00202912BCF200CD03F8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		A2AF00242912BDA600CD03F8 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00232912BDA600CD03F8 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A2AF00262912BDA600CD03F8 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00232912BDA600CD03F8 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		A2AF00292912BEB800CD03F8 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00282912BEB800CD03F8 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		A2AF002B2912BEB800CD03F8 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00282912BEB800CD03F8 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		A2AF002E2912BF7400CD03F8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF002D2912BF7400CD03F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		A2AF00312912BFE600CD03F8 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2AF00302912BFE600CD03F8 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A2AFFFFD291221FA00CD03F8 /* Project object */;
 }
