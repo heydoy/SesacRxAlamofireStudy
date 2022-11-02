@@ -22,6 +22,8 @@
 		A2AF00322912BFE600CD03F8 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00312912BFE600CD03F8 /* Hero */; };
 		A2AF00362912C04700CD03F8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00352912C04700CD03F8 /* BaseView.swift */; };
 		A2AF00382912C05500CD03F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00372912C05500CD03F8 /* BaseViewController.swift */; };
+		A2AF003C2913223900CD03F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF003B2913223900CD03F8 /* NetworkManager.swift */; };
+		A2AF003F2913259C00CD03F8 /* OfflineWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF003E2913259C00CD03F8 /* OfflineWarningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		A2AF0016291221FC00CD03F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2AF00352912C04700CD03F8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2AF00372912C05500CD03F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A2AF003B2913223900CD03F8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A2AF003E2913259C00CD03F8 /* OfflineWarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineWarningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				A2AF001C2912229000CD03F8 /* App */,
+				A2AF00392913221100CD03F8 /* Data */,
 				A2AF00332912C02A00CD03F8 /* Presentation */,
 				A2AF0011291221FC00CD03F8 /* Assets.xcassets */,
 				A2AF0013291221FC00CD03F8 /* LaunchScreen.storyboard */,
@@ -97,10 +102,35 @@
 		A2AF00342912C03500CD03F8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF003D2913256700CD03F8 /* forWarning */,
 				A2AF00352912C04700CD03F8 /* BaseView.swift */,
 				A2AF00372912C05500CD03F8 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		A2AF00392913221100CD03F8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF003A2913221500CD03F8 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A2AF003A2913221500CD03F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF003B2913223900CD03F8 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A2AF003D2913256700CD03F8 /* forWarning */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF003E2913259C00CD03F8 /* OfflineWarningViewController.swift */,
+			);
+			path = forWarning;
 			sourceTree = "<group>";
 		};
 		A2AFFFFC291221FA00CD03F8 = {
@@ -199,7 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2AF00382912C05500CD03F8 /* BaseViewController.swift in Sources */,
+				A2AF003F2913259C00CD03F8 /* OfflineWarningViewController.swift in Sources */,
 				A2AF000D291221FA00CD03F8 /* ViewController.swift in Sources */,
+				A2AF003C2913223900CD03F8 /* NetworkManager.swift in Sources */,
 				A2AF0009291221FA00CD03F8 /* AppDelegate.swift in Sources */,
 				A2AF000B291221FA00CD03F8 /* SceneDelegate.swift in Sources */,
 				A2AF00362912C04700CD03F8 /* BaseView.swift in Sources */,
