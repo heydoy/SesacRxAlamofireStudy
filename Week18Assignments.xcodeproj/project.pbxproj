@@ -34,6 +34,17 @@
 		A2AF00612913C7F900CD03F8 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00602913C7F900CD03F8 /* SignupViewModel.swift */; };
 		A2AF00632913C81600CD03F8 /* CommonViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00622913C81600CD03F8 /* CommonViewModelType.swift */; };
 		A2AF00652913D05200CD03F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00642913D05200CD03F8 /* String+Extension.swift */; };
+		A2AF00672913E3C500CD03F8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00662913E3C500CD03F8 /* Endpoint.swift */; };
+		A2AF006A2913E43700CD03F8 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00692913E43700CD03F8 /* Token.swift */; };
+		A2AF006D2913F5A800CD03F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF006C2913F5A800CD03F8 /* ProfileViewController.swift */; };
+		A2AF006F2913F5BB00CD03F8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF006E2913F5BB00CD03F8 /* ProfileView.swift */; };
+		A2AF00722913F86A00CD03F8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00712913F86A00CD03F8 /* LoginView.swift */; };
+		A2AF00742913F87600CD03F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00732913F87600CD03F8 /* LoginViewController.swift */; };
+		A2AF00762913FAD500CD03F8 /* SeSacNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00752913FAD500CD03F8 /* SeSacNetwork.swift */; };
+		A2AF00782913FBF100CD03F8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00772913FBF100CD03F8 /* ProfileViewModel.swift */; };
+		A2AF007A2913FC0800CD03F8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00792913FC0800CD03F8 /* Profile.swift */; };
+		A2AF007C2913FF4900CD03F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF007B2913FF4900CD03F8 /* LoginViewModel.swift */; };
+		A2AF007E2914001F00CD03F8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF007D2914001F00CD03F8 /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +68,17 @@
 		A2AF00602913C7F900CD03F8 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		A2AF00622913C81600CD03F8 /* CommonViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModelType.swift; sourceTree = "<group>"; };
 		A2AF00642913D05200CD03F8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A2AF00662913E3C500CD03F8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A2AF00692913E43700CD03F8 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		A2AF006C2913F5A800CD03F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A2AF006E2913F5BB00CD03F8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A2AF00712913F86A00CD03F8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A2AF00732913F87600CD03F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2AF00752913FAD500CD03F8 /* SeSacNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacNetwork.swift; sourceTree = "<group>"; };
+		A2AF00772913FBF100CD03F8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A2AF00792913FC0800CD03F8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A2AF007B2913FF4900CD03F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A2AF007D2914001F00CD03F8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +137,8 @@
 		A2AF00332912C02A00CD03F8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF00702913F86000CD03F8 /* Login */,
+				A2AF006B2913F59700CD03F8 /* Profile */,
 				A2AF00482913400500CD03F8 /* Signup */,
 				A2AF00342912C03500CD03F8 /* Base */,
 				A2AF000C291221FA00CD03F8 /* ViewController.swift */,
@@ -136,6 +160,7 @@
 		A2AF00392913221100CD03F8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF00682913E41F00CD03F8 /* UserDefaults */,
 				A2AF003A2913221500CD03F8 /* Network */,
 			);
 			path = Data;
@@ -145,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				A2AF003B2913223900CD03F8 /* NetworkManager.swift */,
+				A2AF00662913E3C500CD03F8 /* Endpoint.swift */,
+				A2AF00752913FAD500CD03F8 /* SeSacNetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -187,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				A2AF005D2913C77C00CD03F8 /* Signup.swift */,
+				A2AF00792913FC0800CD03F8 /* Profile.swift */,
+				A2AF007D2914001F00CD03F8 /* Login.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,8 +225,36 @@
 			children = (
 				A2AF00622913C81600CD03F8 /* CommonViewModelType.swift */,
 				A2AF00602913C7F900CD03F8 /* SignupViewModel.swift */,
+				A2AF007B2913FF4900CD03F8 /* LoginViewModel.swift */,
+				A2AF00772913FBF100CD03F8 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2AF00682913E41F00CD03F8 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF00692913E43700CD03F8 /* Token.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		A2AF006B2913F59700CD03F8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF006E2913F5BB00CD03F8 /* ProfileView.swift */,
+				A2AF006C2913F5A800CD03F8 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A2AF00702913F86000CD03F8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF00712913F86A00CD03F8 /* LoginView.swift */,
+				A2AF00732913F87600CD03F8 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A2AFFFFC291221FA00CD03F8 = {
@@ -304,15 +361,26 @@
 				A2AF004C2913403500CD03F8 /* SignupViewController.swift in Sources */,
 				A2AF00382912C05500CD03F8 /* BaseViewController.swift in Sources */,
 				A2AF003F2913259C00CD03F8 /* OfflineWarningViewController.swift in Sources */,
+				A2AF007A2913FC0800CD03F8 /* Profile.swift in Sources */,
 				A2AF00632913C81600CD03F8 /* CommonViewModelType.swift in Sources */,
+				A2AF00672913E3C500CD03F8 /* Endpoint.swift in Sources */,
 				A2AF000D291221FA00CD03F8 /* ViewController.swift in Sources */,
 				A2AF003C2913223900CD03F8 /* NetworkManager.swift in Sources */,
+				A2AF006D2913F5A800CD03F8 /* ProfileViewController.swift in Sources */,
+				A2AF00742913F87600CD03F8 /* LoginViewController.swift in Sources */,
+				A2AF006A2913E43700CD03F8 /* Token.swift in Sources */,
 				A2AF004A2913402000CD03F8 /* SignupView.swift in Sources */,
+				A2AF00762913FAD500CD03F8 /* SeSacNetwork.swift in Sources */,
+				A2AF006F2913F5BB00CD03F8 /* ProfileView.swift in Sources */,
 				A2AF00612913C7F900CD03F8 /* SignupViewModel.swift in Sources */,
 				A2AF00652913D05200CD03F8 /* String+Extension.swift in Sources */,
 				A2AF0009291221FA00CD03F8 /* AppDelegate.swift in Sources */,
 				A2AF000B291221FA00CD03F8 /* SceneDelegate.swift in Sources */,
 				A2AF005E2913C77C00CD03F8 /* Signup.swift in Sources */,
+				A2AF00782913FBF100CD03F8 /* ProfileViewModel.swift in Sources */,
+				A2AF007C2913FF4900CD03F8 /* LoginViewModel.swift in Sources */,
+				A2AF007E2914001F00CD03F8 /* Login.swift in Sources */,
+				A2AF00722913F86A00CD03F8 /* LoginView.swift in Sources */,
 				A2AF005B2913BBD000CD03F8 /* UIView+Extension.swift in Sources */,
 				A2AF00362912C04700CD03F8 /* BaseView.swift in Sources */,
 			);
