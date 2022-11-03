@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SignupViewController: BaseViewController {
     
     let mainView = SignupView()
+    let disposeBag = DisposeBag()
+    let viewModel = SignupViewModel()
     
     override func loadView() {
         view = mainView
@@ -18,6 +22,91 @@ class SignupViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.backgroundColor = .green
+        
+        bind()
+    }
+    
+    func bind() {
+        
+        
+        
+        let nicknameValidation = mainView.nicknameTextField
+            .rx
+            .text
+            .orEmpty
+            .map { $0.isValidNickname() }
+            .share()
+        
+        nicknameValidation
+            .bind(to:  mainView.nicknameValidationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        nicknameValidation
+            .map { !$0 }
+            .bind(to:
+                mainView.emailTextField.rx.isHidden,
+                mainView.emailValidationLabel.rx.isHidden
+            )
+            .disposed(by: disposeBag)
+        
+        viewModel.validNicknameText
+            .asDriver(onErrorJustReturn: "")
+            .drive(mainView.nicknameValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        
+        
+        let emailValidation = mainView.emailTextField
+            .rx
+            .text
+            .orEmpty
+            .map { $0.isValidEmail() }
+            .share()
+        
+        emailValidation
+            .bind(to: mainView.emailValidationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        emailValidation
+            .map { !$0 }
+            .bind(to: mainView.passwordTextField.rx.isHidden, mainView.passwordValidationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+       
+        viewModel.validEmailText
+            .asDriver(onErrorJustReturn: "")
+            .drive(mainView.emailValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        let passwordValidation = mainView.passwordTextField
+            .rx
+            .text
+            .orEmpty
+            .map { $0.isValidPassword() }
+            .share()
+        
+        passwordValidation
+            .bind(to: mainView.passwordValidationLabel.rx.isHidden, mainView.registerButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        passwordValidation
+            .withUnretained(self)
+            .bind { (vc, value) in
+                vc.mainView.registerButton.backgroundColor = value ? .systemPink : .lightGray
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.validPasswordText
+            .asDriver(onErrorJustReturn: "")
+            .drive(mainView.passwordValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        mainView.registerButton
+            .rx
+            .tap
+            .bind { _ in
+                print(":)")
+            }
+            .disposed(by: disposeBag)
     }
     
 }
