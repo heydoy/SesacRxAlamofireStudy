@@ -28,14 +28,33 @@ class LoginViewController: BaseViewController {
     
     func bind () {
         
+        let emailValidation = mainView.emailTextField
+            .rx.text
+            .orEmpty
+            .map { $0.isValidEmail() }
+            .share()
+        
+        emailValidation.bind(to: mainView.emailValidationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        let passwordValidation = mainView.passwordTextField
+            .rx.text
+            .orEmpty
+            .map { $0.isValidPassword() }
+            .share()
+        
+        passwordValidation
+            .bind(to: mainView.loginButton.rx.isEnabled, mainView.passwordValidationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
         mainView.loginButton
             .rx.tap
             .withUnretained(self)
             .bind { (vc, _) in
-                vc.viewModel.postLogin(email: "hue@hue.com", password: "hue12345")
+                vc.viewModel.postLogin(
+                    email: vc.mainView.emailTextField.text!,
+                    password: vc.mainView.passwordTextField.text!)
                 print(UserDefaults.token)
-                
-                
             }
             .disposed(by: disposeBag)
         
