@@ -27,6 +27,9 @@
 		A2AF00422913274D00CD03F8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00412913274D00CD03F8 /* SnapKit */; };
 		A2AF00452913276100CD03F8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A2AF00442913276100CD03F8 /* Then */; };
 		A2AF004729132F6900CD03F8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A2AF004629132F6900CD03F8 /* .gitignore */; };
+		A2AF004A2913402000CD03F8 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF00492913402000CD03F8 /* SignupView.swift */; };
+		A2AF004C2913403500CD03F8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF004B2913403500CD03F8 /* SignupViewController.swift */; };
+		A2AF005B2913BBD000CD03F8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF005A2913BBD000CD03F8 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		A2AF003B2913223900CD03F8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A2AF003E2913259C00CD03F8 /* OfflineWarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineWarningViewController.swift; sourceTree = "<group>"; };
 		A2AF004629132F6900CD03F8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A2AF00492913402000CD03F8 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		A2AF004B2913403500CD03F8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A2AF005A2913BBD000CD03F8 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A2AF001C2912229000CD03F8 /* App */,
+				A2AF00582913BBB400CD03F8 /* Global */,
 				A2AF00392913221100CD03F8 /* Data */,
 				A2AF00332912C02A00CD03F8 /* Presentation */,
 				A2AF0011291221FC00CD03F8 /* Assets.xcassets */,
@@ -98,6 +105,7 @@
 		A2AF00332912C02A00CD03F8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF00482913400500CD03F8 /* Signup */,
 				A2AF00342912C03500CD03F8 /* Base */,
 				A2AF000C291221FA00CD03F8 /* ViewController.swift */,
 				A2AF000E291221FA00CD03F8 /* Main.storyboard */,
@@ -137,6 +145,31 @@
 				A2AF003E2913259C00CD03F8 /* OfflineWarningViewController.swift */,
 			);
 			path = forWarning;
+			sourceTree = "<group>";
+		};
+		A2AF00482913400500CD03F8 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF00492913402000CD03F8 /* SignupView.swift */,
+				A2AF004B2913403500CD03F8 /* SignupViewController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		A2AF00582913BBB400CD03F8 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF00592913BBB800CD03F8 /* Extensions */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		A2AF00592913BBB800CD03F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF005A2913BBD000CD03F8 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A2AFFFFC291221FA00CD03F8 = {
@@ -240,12 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2AF004C2913403500CD03F8 /* SignupViewController.swift in Sources */,
 				A2AF00382912C05500CD03F8 /* BaseViewController.swift in Sources */,
 				A2AF003F2913259C00CD03F8 /* OfflineWarningViewController.swift in Sources */,
 				A2AF000D291221FA00CD03F8 /* ViewController.swift in Sources */,
 				A2AF003C2913223900CD03F8 /* NetworkManager.swift in Sources */,
+				A2AF004A2913402000CD03F8 /* SignupView.swift in Sources */,
 				A2AF0009291221FA00CD03F8 /* AppDelegate.swift in Sources */,
 				A2AF000B291221FA00CD03F8 /* SceneDelegate.swift in Sources */,
+				A2AF005B2913BBD000CD03F8 /* UIView+Extension.swift in Sources */,
 				A2AF00362912C04700CD03F8 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
