@@ -13,13 +13,14 @@ class SignupView: BaseView {
     let nicknameTextField = UITextField().then {
         $0.placeholder = "닉네임을 입력해주세요"
         $0.clearButtonMode = .whileEditing
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont(ofSize: 14)
         $0.layer.cornerRadius = 8
         $0.backgroundColor = .white
+        $0.autocapitalizationType = .none
     }
     let nicknameValidationLabel = UILabel().then {
         $0.text = "유효한 닉네임을 입력해주세요."
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont(ofSize: 12)
         $0.textColor = .darkGray
     }
     let emailTextField = UITextField().then {
@@ -28,11 +29,14 @@ class SignupView: BaseView {
         $0.font = .systemFont(ofSize: 14)
         $0.layer.cornerRadius = 8
         $0.backgroundColor = .white
+        $0.isHidden = true
+        $0.autocapitalizationType = .none
     }
     let emailValidationLabel = UILabel().then {
         $0.text = "유효한 이메일을 입력해주세요."
         $0.font = .systemFont(ofSize: 12)
         $0.textColor = .darkGray
+        $0.isHidden = true
     }
     let passwordTextField = UITextField().then {
         $0.placeholder = "비밀번호를 입력해주세요"
@@ -41,11 +45,14 @@ class SignupView: BaseView {
         $0.isSecureTextEntry = true
         $0.layer.cornerRadius = 8
         $0.backgroundColor = .white
+        $0.isHidden = true
+        $0.autocapitalizationType = .none
     }
     let passwordValidationLabel = UILabel().then {
         $0.text = "유효한 비밀번호를 입력해주세요."
         $0.font = .systemFont(ofSize: 12)
         $0.textColor = .darkGray
+        $0.isHidden = true
     }
     let registerButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
@@ -64,7 +71,6 @@ class SignupView: BaseView {
             passwordTextField, passwordValidationLabel,
             registerButton
         )
-        
     }
     
     override func setConstraints() {
