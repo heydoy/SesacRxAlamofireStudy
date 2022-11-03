@@ -15,6 +15,7 @@ class SignupViewController: BaseViewController {
     let disposeBag = DisposeBag()
     let viewModel = SignupViewModel()
     
+    
     override func loadView() {
         view = mainView
     }
@@ -27,9 +28,15 @@ class SignupViewController: BaseViewController {
     }
     
     func bind() {
-        
-        
-        
+        mainView.nicknameTextField
+            .rx.text.orEmpty
+            .bind { [weak self] value in
+                if value.isValidNickname() {
+                    self?.viewModel.signupInfo.nickname = value
+                }
+            }
+            .disposed(by: disposeBag)
+
         let nicknameValidation = mainView.nicknameTextField
             .rx
             .text
@@ -54,7 +61,14 @@ class SignupViewController: BaseViewController {
             .drive(mainView.nicknameValidationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        
+        mainView.emailTextField
+            .rx.text.orEmpty
+            .bind { [weak self] value in
+                if value.isValidEmail() {
+                    self?.viewModel.signupInfo.email = value
+                }
+            }
+            .disposed(by: disposeBag)
         
         let emailValidation = mainView.emailTextField
             .rx
@@ -75,6 +89,15 @@ class SignupViewController: BaseViewController {
         viewModel.validEmailText
             .asDriver(onErrorJustReturn: "")
             .drive(mainView.emailValidationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        mainView.passwordTextField
+            .rx.text.orEmpty
+            .bind { [weak self] value in
+                if value.isValidPassword() {
+                    self?.viewModel.signupInfo.password = value
+                }
+            }
             .disposed(by: disposeBag)
         
         let passwordValidation = mainView.passwordTextField
@@ -103,9 +126,22 @@ class SignupViewController: BaseViewController {
         mainView.registerButton
             .rx
             .tap
-            .bind { _ in
-                print(":)")
+            .withUnretained(self)
+            .subscribe {(vc, _ ) in
+                vc.viewModel.postSignup(
+                    userName: vc.viewModel.signupInfo.nickname,
+                    email: vc.viewModel.signupInfo.email,
+                    password: vc.viewModel.signupInfo.password)
+                print(vc.viewModel.signupInfo, vc.viewModel.signupResponse)
             }
+            .disposed(by: disposeBag)
+        
+        viewModel.signupResponse
+            .asDriver(onErrorJustReturn: false)
+            .drive(onNext: { [weak self] _ in
+                let vc = LoginViewController()
+                self?.present(vc, animated: true)
+            })
             .disposed(by: disposeBag)
     }
     
