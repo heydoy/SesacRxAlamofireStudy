@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol CommonViewModelType: AnyObject {
+    associatedtype Input
+    associatedtype Output
+    func transform(input: Input) -> Output
+} 
