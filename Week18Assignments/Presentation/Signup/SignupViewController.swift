@@ -31,7 +31,7 @@ class SignupViewController: BaseViewController {
         mainView.nicknameTextField
             .rx.text.orEmpty
             .bind { [weak self] value in
-                if value.isValidNickname() {
+                if value.isValidString(.nicknameRegex) {
                     self?.viewModel.signupInfo.nickname = value
                 }
             }
@@ -41,7 +41,7 @@ class SignupViewController: BaseViewController {
             .rx
             .text
             .orEmpty
-            .map { $0.isValidNickname() }
+            .map { $0.isValidString(.nicknameRegex) }
             .share()
         
         nicknameValidation
@@ -64,7 +64,7 @@ class SignupViewController: BaseViewController {
         mainView.emailTextField
             .rx.text.orEmpty
             .bind { [weak self] value in
-                if value.isValidEmail() {
+                if value.isValidString(.emailRegex) {
                     self?.viewModel.signupInfo.email = value
                 }
             }
@@ -74,7 +74,7 @@ class SignupViewController: BaseViewController {
             .rx
             .text
             .orEmpty
-            .map { $0.isValidEmail() }
+            .map { $0.isValidString(.emailRegex) }
             .share()
         
         emailValidation
@@ -94,7 +94,7 @@ class SignupViewController: BaseViewController {
         mainView.passwordTextField
             .rx.text.orEmpty
             .bind { [weak self] value in
-                if value.isValidPassword() {
+                if value.isValidString(.passwordRegex) {
                     self?.viewModel.signupInfo.password = value
                 }
             }
@@ -104,7 +104,7 @@ class SignupViewController: BaseViewController {
             .rx
             .text
             .orEmpty
-            .map { $0.isValidPassword() }
+            .map { $0.isValidString(.passwordRegex) }
             .share()
         
         passwordValidation

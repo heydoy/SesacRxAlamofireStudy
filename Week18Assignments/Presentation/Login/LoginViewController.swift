@@ -31,7 +31,7 @@ class LoginViewController: BaseViewController {
         let emailValidation = mainView.emailTextField
             .rx.text
             .orEmpty
-            .map { $0.isValidEmail() }
+            .map { $0.isValidString(.emailRegex) }
             .share()
         
         emailValidation.bind(to: mainView.emailValidationLabel.rx.isHidden)
@@ -40,7 +40,7 @@ class LoginViewController: BaseViewController {
         let passwordValidation = mainView.passwordTextField
             .rx.text
             .orEmpty
-            .map { $0.isValidPassword() }
+            .map { $0.isValidString(.passwordRegex) }
             .share()
         
         passwordValidation
