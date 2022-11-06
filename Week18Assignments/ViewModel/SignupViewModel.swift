@@ -22,7 +22,7 @@ class SignupViewModel: CommonViewModelType {
     func postSignup(userName: String, email: String, password: String) {
         let api = SeSACAPI.signup(userName: userName, email: email, password: password)
         
-        SeSACNetwork.shared.reqeustSeSAC(ofType: String.self, url: api.url, method: .post, parameters: api.parameters, headers: api.headers) { [weak self] response in
+        SeSACNetwork.shared.requestSeSAC(ofType: String.self, url: api.url, method: .post, parameters: api.parameters, headers: api.headers) { [weak self] response in
             switch response {
             case .success(_) :
                 self?.signupResponse.onNext(true)

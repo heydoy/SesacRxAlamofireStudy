@@ -15,7 +15,7 @@ class LoginViewModel {
     func postLogin(email: String, password: String) {
         let api = SeSACAPI.login(email: email, password: password)
         
-        SeSACNetwork.shared.reqeustSeSAC(ofType: Login.self, url: api.url, method: .post, parameters: api.parameters, headers: api.headers) { [weak self] response in
+        SeSACNetwork.shared.requestSeSAC(ofType: Login.self, url: api.url, method: .post, parameters: api.parameters, headers: api.headers) { [weak self] response in
             switch response {
             case .success(let success):
                 UserDefaults.token = success.token

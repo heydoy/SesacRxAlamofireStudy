@@ -35,7 +35,7 @@ final class SeSACNetwork {
     
     /// 공통으로 요청하는 메서드
     /// ResponseString에 대응해서 바꿔줄 수도 있다.
-    func reqeustSeSAC <T:Decodable> (ofType: T.Type = T.self, url: URL, method: HTTPMethod, parameters: [String:String]? = nil, headers: HTTPHeaders, completion: @escaping (Result<T, Error>) -> Void ) {
+    func requestSeSAC <T:Decodable> (ofType: T.Type = T.self, url: URL, method: HTTPMethod, parameters: [String:String]? = nil, headers: HTTPHeaders, completion: @escaping (Result<T, Error>) -> Void ) {
         
         AF.request(url, method: method, parameters: parameters, headers: headers).responseDecodable(of: ofType) { response in
             

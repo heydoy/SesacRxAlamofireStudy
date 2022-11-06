@@ -14,7 +14,7 @@ class ProfileViewModel {
     
     func getProfile() {
         let api = SeSACAPI.profile
-        SeSACNetwork.shared.reqeustSeSAC(ofType: Profile.self, url: api.url, method: .get, headers: api.headers) { [weak self] response in
+        SeSACNetwork.shared.requestSeSAC(ofType: Profile.self, url: api.url, method: .get, headers: api.headers) { [weak self] response in
             switch response {
             case .success(let success) :
                 self?.profile.onNext(success)
