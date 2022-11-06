@@ -7,8 +7,9 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-class LoginViewModel {
+class LoginViewModel: CommonViewModelType {
     
     let loginResponse = PublishSubject<Bool>()
     
@@ -24,5 +25,37 @@ class LoginViewModel {
                 self?.loginResponse.onError(failure)
             }
         }
+    }
+    struct Input {
+        let emailText: ControlProperty<String?>
+        let passwordText: ControlProperty<String?>
+        let loginTap: ControlEvent<Void>
+        let goSignupTap: ControlEvent<Void>
+    }
+    struct Output {
+        let emailValidation: Observable<Bool>
+        let passwordValidation:
+            Observable<Bool>
+        let loginTap: ControlEvent<Void>
+        let goSignupTap: ControlEvent<Void>
+    }
+    
+    func transform(input: Input) -> Output {
+        let emailValidation = input.emailText
+            .orEmpty
+            .map { $0.isValidString(.emailRegex) }
+            .share()
+        let passwordValidation = input.passwordText
+            .orEmpty
+            .map { $0.isValidString(.passwordRegex) }
+            .share()
+        
+        
+        return Output(
+            emailValidation: emailValidation,
+            passwordValidation: passwordValidation,
+            loginTap: input.loginTap,
+            goSignupTap: input.goSignupTap)
+        
     }
 }

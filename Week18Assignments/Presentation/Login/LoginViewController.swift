@@ -28,27 +28,26 @@ class LoginViewController: BaseViewController {
     
     func bind () {
         
-        let emailValidation = mainView.emailTextField
-            .rx.text
-            .orEmpty
-            .map { $0.isValidString(.emailRegex) }
-            .share()
+        let input = LoginViewModel.Input(
+            emailText: mainView.emailTextField
+            .rx.text,
+            passwordText: mainView.passwordTextField
+            .rx.text,
+            loginTap: mainView.loginButton
+                .rx.tap,
+            goSignupTap: mainView.goSignupButton
+                .rx.tap)
+        let output = viewModel.transform(input: input)
         
-        emailValidation.bind(to: mainView.emailValidationLabel.rx.isHidden)
+        output.emailValidation
+            .bind(to: mainView.emailValidationLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        let passwordValidation = mainView.passwordTextField
-            .rx.text
-            .orEmpty
-            .map { $0.isValidString(.passwordRegex) }
-            .share()
-        
-        passwordValidation
+        output.passwordValidation
             .bind(to: mainView.loginButton.rx.isEnabled, mainView.passwordValidationLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        mainView.loginButton
-            .rx.tap
+        output.loginTap
             .withUnretained(self)
             .bind { (vc, _) in
                 vc.viewModel.postLogin(
@@ -58,8 +57,7 @@ class LoginViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        mainView.goSignupButton
-            .rx.tap
+        output.goSignupTap
             .bind { [weak self] _ in
                 let vc = SignupViewController()
                 vc.modalPresentationStyle = .fullScreen
