@@ -28,8 +28,22 @@ class SignupViewController: BaseViewController {
     }
     
     func bind() {
-        mainView.nicknameTextField
-            .rx.text.orEmpty
+        
+        let input = SignupViewModel.Input(
+            nicknameText:  mainView.nicknameTextField
+                .rx.text,
+            emailText: mainView.emailTextField
+                .rx.text,
+            passwordText: mainView.passwordTextField
+                .rx.text,
+            registerTap: mainView.registerButton
+                .rx.tap
+        )
+        
+        let output = viewModel.transform(input: input)
+       
+        output.nicknameText
+            .orEmpty
             .bind { [weak self] value in
                 if value.isValidString(.nicknameRegex) {
                     self?.viewModel.signupInfo.nickname = value
@@ -37,18 +51,12 @@ class SignupViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
 
-        let nicknameValidation = mainView.nicknameTextField
-            .rx
-            .text
-            .orEmpty
-            .map { $0.isValidString(.nicknameRegex) }
-            .share()
         
-        nicknameValidation
+        output.nicknameValidation
             .bind(to:  mainView.nicknameValidationLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        nicknameValidation
+        output.nicknameValidation
             .map { !$0 }
             .bind(to:
                 mainView.emailTextField.rx.isHidden,
@@ -56,13 +64,13 @@ class SignupViewController: BaseViewController {
             )
             .disposed(by: disposeBag)
         
-        viewModel.validNicknameText
-            .asDriver(onErrorJustReturn: "")
+        
+        output.validNicknameAsDriver
             .drive(mainView.nicknameValidationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        mainView.emailTextField
-            .rx.text.orEmpty
+        output.emailText
+            .orEmpty
             .bind { [weak self] value in
                 if value.isValidString(.emailRegex) {
                     self?.viewModel.signupInfo.email = value
@@ -70,29 +78,21 @@ class SignupViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        let emailValidation = mainView.emailTextField
-            .rx
-            .text
-            .orEmpty
-            .map { $0.isValidString(.emailRegex) }
-            .share()
         
-        emailValidation
+        output.emailValidation
             .bind(to: mainView.emailValidationLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        emailValidation
+        output.emailValidation
             .map { !$0 }
             .bind(to: mainView.passwordTextField.rx.isHidden, mainView.passwordValidationLabel.rx.isHidden)
             .disposed(by: disposeBag)
        
-        viewModel.validEmailText
-            .asDriver(onErrorJustReturn: "")
+        output.validEmailAsDriver
             .drive(mainView.emailValidationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        mainView.passwordTextField
-            .rx.text.orEmpty
+        output.passwordText.orEmpty
             .bind { [weak self] value in
                 if value.isValidString(.passwordRegex) {
                     self?.viewModel.signupInfo.password = value
@@ -100,32 +100,22 @@ class SignupViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        let passwordValidation = mainView.passwordTextField
-            .rx
-            .text
-            .orEmpty
-            .map { $0.isValidString(.passwordRegex) }
-            .share()
-        
-        passwordValidation
+        output.passwordValidation
             .bind(to: mainView.passwordValidationLabel.rx.isHidden, mainView.registerButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        passwordValidation
+        output.passwordValidation
             .withUnretained(self)
             .bind { (vc, value) in
                 vc.mainView.registerButton.backgroundColor = value ? .systemPink : .lightGray
             }
             .disposed(by: disposeBag)
         
-        viewModel.validPasswordText
-            .asDriver(onErrorJustReturn: "")
+        output.validPasswordAsDriver
             .drive(mainView.passwordValidationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        mainView.registerButton
-            .rx
-            .tap
+        output.registerTap
             .withUnretained(self)
             .subscribe {(vc, _ ) in
                 vc.viewModel.postSignup(
@@ -136,8 +126,7 @@ class SignupViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.signupResponse
-            .asDriver(onErrorJustReturn: false)
+        output.signupResponseAsDriver
             .drive(onNext: { [weak self] _ in
                 let vc = LoginViewController()
                 self?.present(vc, animated: true)
