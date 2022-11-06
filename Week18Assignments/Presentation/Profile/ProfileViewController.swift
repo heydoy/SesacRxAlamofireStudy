@@ -27,6 +27,12 @@ class ProfileViewController: BaseViewController {
     }
     
     func bind() {
+        
+        let input = ProfileViewModel.Input(logoutTap: mainView.logoutButton
+            .rx.tap)
+        
+        let output = viewModel.transform(input: input)
+        
         viewModel.profile
             .withUnretained(self)
             .subscribe { (vc, profile) in
@@ -43,8 +49,8 @@ class ProfileViewController: BaseViewController {
 
         viewModel.getProfile()
         
-        mainView.logoutButton
-            .rx.tap
+        output
+            .logoutTap
             .withUnretained(self)
             .bind { (vc, _) in
                 UserDefaults.token = ""

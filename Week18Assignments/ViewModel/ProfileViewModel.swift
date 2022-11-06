@@ -7,8 +7,9 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-class ProfileViewModel {
+class ProfileViewModel: CommonViewModelType {
     
     let profile = PublishSubject<Profile>()
     
@@ -22,5 +23,21 @@ class ProfileViewModel {
                 self?.profile.onError(failure)
             }
         }
+    }
+    
+    struct Input {
+        
+        // 로그아웃버튼 탭
+        let logoutTap: ControlEvent<Void>
+    }
+    
+    struct Output {
+        // 로그아웃버튼 탭
+        let logoutTap: ControlEvent<Void>
+    }
+    
+    func transform(input: Input) -> Output {
+        
+        return Output(logoutTap: input.logoutTap)
     }
 }
